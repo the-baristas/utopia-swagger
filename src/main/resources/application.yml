@@ -1,0 +1,29 @@
+---
+info:
+  component: Default Single Swagger Document Server for MicroService
+
+spring:
+  profiles: default
+
+server:
+  port: 8014
+
+documentation: 
+  baseurl: http://localhost
+  swagger: 
+    services:   
+      - 
+        name: User Service
+        url: ${documentation.baseurl}:8081/v3/api-docs
+        version: 1.0
+      - 
+        name: Booking Service
+        url: ${documentation.baseurl}:8091/v3/api-docs
+        version: 1.0
+      - 
+        name: Flight Service
+        url: ${documentation.baseurl}:8090/v3/api-docs
+        version: 1.0
+
+ 
+    
